@@ -78,6 +78,15 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-1
 
+1. Kita tidak memerlukan interface atau trait karena hanya ada satu tipe Subscriber (struct Subscriber). Observer pattern biasanya menggunakan interface jika ada banyak jenis observer dengan perilaku berbeda, tetapi di sini, struct sederhana sudah cukup karena tidak ada variasi perilaku yang perlu di-abstract.
+
+2. Menggunakan Vec tidak cukup efisien karena pencarian subscriber berdasarkan url atau id akan membutuhkan iterasi manual. DashMap lebih cocok karena struktur key-value-nya memungkinkan pencarian dalam waktu konstan, sekaligus aman untuk multithreading.
+
+3. DashMap tetap diperlukan meskipun kita menerapkan Singleton pattern. Singleton hanya memastikan satu instance SUBSCRIBERS yang ada, tetapi DashMap menambahkan thread-safety dengan lock-free reads, sehingga aman diakses oleh banyak thread secara bersamaan tanpa deadlock. Tanpa DashMap, kita harus mengelola locking manual yang lebih rentan error.
+
+
 #### Reflection Publisher-2
+
+
 
 #### Reflection Publisher-3
