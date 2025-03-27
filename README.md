@@ -48,22 +48,22 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [v] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [v] Commit: `Create Subscriber model struct.`
+    -   [v] Commit: `Create Notification model struct.`
+    -   [v] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [v] Commit: `Implement add function in Subscriber repository.`
+    -   [v] Commit: `Implement list_all function in Subscriber repository.`
+    -   [v] Commit: `Implement delete function in Subscriber repository.`
+    -   [v] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [v] Commit: `Create Notification service struct skeleton.`
+    -   [v] Commit: `Implement subscribe function in Notification service.`
+    -   [v] Commit: `Implement subscribe function in Notification controller.`
+    -   [v] Commit: `Implement unsubscribe function in Notification service.`
+    -   [v] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [v] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -87,6 +87,10 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-2
 
+1. Dalam MVC, Model biasanya menangani data dan logika bisnis sekaligus, tetapi memisahkan Service (logika bisnis) dan Repository (akses data) mengikuti prinsip Single Responsibility Principle (SRP). Service fokus pada business logic (seperti validasi atau notifikasi), sementara Repository hanya menangani penyimpanan/data (seperti SubscriberRepository). Pemisahan ini membuat kode lebih modular, mudah di-maintain, dan mengurangi coupling.
 
+2. Jika semua logika bisnis dan penyimpanan digabung dalam Model, interaksi antar-model (misalnya Program, Subscriber, Notification) akan menjadi sangat kompleks. Contoh: Product harus langsung mengakses database (DashMap) dan mengirim notifikasi, yang melanggar prinsip separation of concerns. Kode menjadi kacau (tightly coupled) dan sulit di-debug.
+
+3. Postman sangat membantu dalam menguji API. Saya menggunakannya untuk mengirim request, melihat respons, dan memastikan fitur backend bekerja dengan baik. Fitur seperti Collection membantu mengatur request, sementara Environment Variables menyimpan nilai yang sering digunakan seperti token atau URL. Postman juga mendukung Automated Testing, sehingga kita bisa memverifikasi respons API secara otomatis. Ini membuat debugging lebih cepat dan pengujian lebih sistematis, sangat berguna untuk proyek sekarang maupun di masa depan.
 
 #### Reflection Publisher-3
